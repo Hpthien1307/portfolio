@@ -1,0 +1,168 @@
+.btn {
+    position: relative;
+    z-index: 2;
+    font-family: var(--font-pri);
+    width: fit-content;
+    min-width: 14rem;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4.8rem;
+    border-radius: var(--rds-100);
+    overflow: hidden;
+    cursor: pointer;
+    @include transition(0.3s, ease);
+
+    @include max($res-mobile) {
+        height: 4.2rem;
+    }
+
+    @include hover() {
+        &::after {
+            width: 110%;
+            left: 0;
+        }
+    }
+
+    .txt {
+        font-size: 1.6rem;
+        color: var(--white);
+        font-weight: 600;
+        @include transition(0.3s, ease);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        right: 0%;
+        top: 0;
+        width: 0%;
+        height: 100%;
+        @include transition(0.3s, ease);
+    }
+
+    &.active {
+        @include hover() {
+            &::after {
+                width: 100%;
+                left: 0;
+            }
+        }
+    }
+
+    &.btn-sm {
+        height: 4rem;
+    }
+
+    &.btn-pri {
+        background: var(--linear-trans-1);
+        padding: 1rem 2.4rem;
+
+        &::after {
+            background: var(--color-pri-opa);
+        }
+
+        .txt {
+            color: var(--white);
+        }
+
+        .icon {
+            i {
+                color: var(--white);
+            }
+        }
+
+        @include hover() {
+            .icon {
+                img {
+                    filter: brightness(0) saturate(100%) invert(73%) sepia(28%) saturate(948%) hue-rotate(50deg) brightness(92%) contrast(88%);
+                }
+            }
+        }
+    }
+
+    &.btn-sec {
+        background-color: var(--color-pri-opa);
+
+        &:after {
+            background-color: var(--color-pri);
+        }
+
+        .txt {
+            color: var(--color-pri);
+        }
+
+        @include hover() {
+            .txt {
+                color: var(--white);
+            }
+
+            .icon {
+                img {
+                    filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(707%) hue-rotate(155deg) brightness(110%) contrast(97%);
+                }
+            }
+        }
+    }
+
+    &.btn-white {
+        background-color: var(--white);
+        border: 0.4rem solid rgba(255, 255, 255, 0.24);
+        padding: 1rem 2.4rem;
+
+        .txt {
+            color: var(--color-pri);
+        }
+
+        .icon {
+            i {
+                color: var(--color-pri);
+                font-weight: 400;
+            }
+        }
+
+        &::after {
+            background-color: var(--color-pri);
+        }
+
+        @include hover() {
+            .txt {
+                color: var(--white);
+            }
+        }
+    }
+
+    &.btn-shadow {
+        @include hover() {
+            box-shadow: 0 0 2rem 0.1rem rgba(255, 61, 200, 0.8);
+        }
+    }
+
+    &.has-rotate {
+        @include hover() {
+            .icon {
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &.btn-icon {
+        gap: 0.8rem;
+
+        .icon {
+            @include item-shrink(1.6rem);
+            display: flex;
+            @include transition(0.3s, ease);
+        }
+    }
+
+    &.btn-full {
+        width: 100%;
+    }
+
+    * .wpcf7-spinner {
+        position: absolute;
+    }
+}

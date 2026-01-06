@@ -1,0 +1,275 @@
+@mixin fz-240 {
+    --f-sz: clamp(10rem, calc(-18rem + 35vw), 24rem);
+    font-size: var(--f-sz);
+}
+@mixin fz-220 {
+    --f-sz: clamp(10rem, calc(-10.5714rem + 27.4286vw), 22rem);
+    font-size: var(--f-sz);
+}
+@mixin fz-200 {
+    --f-sz: clamp(10rem, calc(-10rem + 25vw), 20rem);
+    font-size: var(--f-sz);
+}
+@mixin fz-180 {
+    --f-sz: clamp(8rem, calc(-12rem + 25vw), 18rem);
+    font-size: var(--f-sz);
+}
+@mixin fz-140 {
+    --f-sz: clamp(6rem, calc(-10.5161rem + 20.6452vw), 14rem);
+    font-size: var(--f-sz);
+}
+@mixin fz-124 {
+    --f-sz: clamp(5.6rem, calc(-5.7333rem + 15.1111vw), 12.4rem);
+    font-size: var(--f-sz);
+}
+@mixin fz-120 {
+    --f-sz: clamp(5.2rem, calc(-8.4rem + 17vw), 12rem);
+    font-size: var(--f-sz);
+}
+@mixin fz-100 {
+    --f-sz: clamp(4.6rem, calc(-6.2rem + 13.5vw), 10rem);
+    font-size: var(--f-sz);
+}
+@mixin fz-96 {
+    --f-sz: clamp(4.6rem, calc(4.003rem + 2.9851vw), 9.6rem);
+    font-size: var(--f-sz);
+}
+@mixin fz-90 {
+    --f-sz: clamp(4.5rem, calc(-7.8rem + 14vw), 9rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-72 {
+    --f-sz: clamp(4rem, calc(-2.4rem + 8vw), 7.2rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-65 {
+    --f-sz: clamp(3.5rem, calc(-2.5rem + 7.5vw), 6.5rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-64 {
+    --f-sz: clamp(3.4rem, calc(-2.6rem + 7.5vw), 6.4rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-60 {
+    --f-sz: clamp(3.4rem, calc(-1.8rem + 6.5vw), 6rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-56 {
+    --f-sz: clamp(3.2rem, calc(-1.6rem + 6vw), 5.6rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-55 {
+    --f-sz: clamp(3.2rem,calc(-1.4rem + 5.75vw), 5.5rem);
+    font-size: var(--f-sz);
+}
+@mixin fz-54 {
+    --f-sz: clamp(3rem, calc(-1.8rem + 6vw), 5.4rem);
+    font-size: var(--f-sz);
+}
+@mixin fz-52 {
+    --f-sz: clamp(3rem, calc(-1.4rem + 5.5vw), 5.2rem);
+    font-size: var(--f-sz);
+
+}
+@mixin fz-50 {
+    --f-sz: clamp(3rem, calc(-1rem + 5vw), 5rem);
+    font-size: var(--f-sz);
+
+}
+
+@mixin fz-48 {
+    --f-sz: clamp(3rem, calc(-0.6rem + 4.5vw), 4.8rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-45 {
+    --f-sz: clamp(3rem, calc(0rem + 3.75vw), 4.5rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-44 {
+    --f-sz: clamp(3rem, calc(0.2rem + 3.5vw), 4.4rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-42 {
+    --f-sz: clamp(3rem, calc(0.6rem + 3vw), 4.2rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-40 {
+    --f-sz: clamp(2.8rem, calc(0.4rem + 3vw), 4rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-38 {
+    --f-sz: clamp(2.6rem, calc(0.2rem + 3vw), 3.8rem);
+    font-size: var(--f-sz);
+
+}
+
+@mixin fz-36 {
+    --f-sz: clamp(2.6rem, calc(0.6rem + 2.5vw), 3.6rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-35 {
+    --f-sz: clamp(2.5rem, calc(0.5rem + 2.5vw), 3.5rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-34 {
+    --f-sz: clamp(2.4rem, calc(0.4rem + 2.5vw), 3.4rem);
+    font-size: var(--f-sz);
+
+}
+
+@mixin fz-32 {
+    --f-sz: clamp(2.2rem, calc(0.2rem + 2.5vw), 3.2rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-30 {
+    --f-sz: clamp(2.2rem, calc(0.6rem + 2vw), 3rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-29 {
+    --f-sz: clamp(2.2rem, calc(0.8rem + 1.75vw), 2.9rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-28 {
+    --f-sz: clamp(2.2rem, calc(1rem + 1.5vw), 2.8rem);
+    font-size: var(--f-sz);
+
+}
+
+@mixin fz-26 {
+    --f-sz: clamp(2rem, calc(0.8rem + 1.5vw), 2.6rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-25 {
+    --f-sz: clamp(2rem, calc(1rem + 1.25vw), 2.5rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-24 {
+    --f-sz: clamp(1.9rem, calc(0.9rem + 1.25vw), 2.4rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-22 {
+    --f-sz: clamp(1.8rem, calc(1rem + 1vw), 2.2rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-20 {
+    --f-sz: clamp(1.7rem, calc(1.1rem + 0.75vw), 2rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-19 {
+    --f-sz: clamp(1.6rem, calc(1rem + 0.75vw), 1.9rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-18 {
+    --f-sz: clamp(1.6rem, calc(1.2rem + 0.5vw), 1.8rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-17 {
+    --f-sz: clamp(1.5rem, calc(1.1rem + 0.5vw), 1.7rem);
+    font-size: var(--f-sz);
+}
+
+@mixin fz-16 {
+    --f-sz: 1.6rem;
+    font-size: var(--f-sz);
+    @include max(800px){
+        --f-sz: 1.4rem;
+    }
+}
+
+@mixin fz-15 {
+    --f-sz: 1.5rem;
+    font-size: var(--f-sz);
+    @include max(800px){
+        --f-sz: 1.3rem;
+    }
+}
+
+@mixin fz-14 {
+    --f-sz: 1.4rem;
+    font-size: var(--f-sz);
+    @include max(800px){
+        --f-sz: 1.2rem;
+    }
+}
+
+@mixin fz-13 {
+    --f-sz: 1.3rem;
+    font-size: var(--f-sz);
+}
+
+@mixin fz-12 {
+    --f-sz: 1.2rem;
+    font-size: var(--f-sz);
+}
+
+@mixin fz-11 {
+    --f-sz: 1.1rem;
+    font-size: var(--f-sz);
+}
+
+@mixin fz-10 {
+    --f-sz: 1rem;
+    font-size: var(--f-sz);
+}
+
+@mixin fz-9 {
+    --f-sz: 0.9rem;
+    font-size: var(--f-sz);
+}
+
+.f-40{
+    @include fz-40;
+}
+.f-36{
+    @include fz-36;
+}
+.f-32{
+    @include fz-32;
+}
+.f-24{
+    font-size: 2.4rem;
+}
+.t-18{
+    font-size: 1.8rem;
+}
+.t-20{
+    font-size: 2rem;
+}
+.t-24{
+    font-size: 2.4rem;
+}
+.t-28{
+    @include fz-28;
+}
+.t-32{
+    @include fz-32;
+}
+.t-36{
+    @include fz-36;
+}
+.t-40{
+    @include fz-40;
+}

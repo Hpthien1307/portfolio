@@ -1,0 +1,23 @@
+.achive-item {
+    height: 100%;
+
+    .inner {
+        height: 100%;
+        border-radius: var(--rds-24);
+        padding: 4rem;
+        background: linear-gradient(180deg, var(--Brand-Sky-Blue-950, rgba(22, 41, 80, 0.2)) 0%, var(--Brand-Sky-Blue-900, rgba(17, 66, 105, 0.2)) 100%);
+        overflow: hidden;
+
+        @include max($res-mobile) {
+            padding: 2rem;
+        }
+    }
+
+    .num {
+        &::after {
+            content: attr(data-unit);
+            display: block;
+            color: var(--color-white);
+        }
+    }
+}

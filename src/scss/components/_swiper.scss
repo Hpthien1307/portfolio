@@ -1,0 +1,20 @@
+.swiper {
+    .swiper-pagination {
+        position: static;
+        transform: translate(0, 0);
+        margin-top: 1.2rem;
+
+        .swiper-pagination-bullet {
+            @include transition(.3s, ease);
+            background-color: #c2c7d0;
+
+            &.swiper-pagination-bullet-active {
+                background-color: var(--blue) !important;
+            }
+        }
+    }
+
+    .swiper-slide {
+        height: auto;
+    }
+}

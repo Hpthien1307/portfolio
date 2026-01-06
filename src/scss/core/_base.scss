@@ -1,0 +1,345 @@
+@import url('../../public/font/Inter/stylesheet.css');
+
+* {
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark);
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+html:has(.admin-bar) {
+    margin-top: 0 !important;
+}
+
+body {
+    font-family: var(--font-pri);
+    font-size: 16px;
+    line-height: 1.55;
+    font-weight: 400;
+    color: var(--color-text);
+    background-color: var(--dark);
+    overflow: hidden auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+select {
+    font-family: var(--font-pri);
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+input,
+textarea {
+    font-size: 1.6rem;
+    color: var(--color-text);
+    font-family: var(--font-pri);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    @include max($res-mobile) {
+        font-size: 1.4rem;
+    }
+
+    &::placeholder {
+        font-size: 1.6rem;
+        color: var(--color-text);
+        font-weight: 500;
+
+        @include max($res-mobile) {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+.main {
+    min-height: 40vh;
+    padding-top: var(--size-hd);
+}
+
+.container {
+    width: 100%;
+    max-width: var(--ctn);
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.no-scroll {
+    touch-action: none;
+    -webkit-overflow-scrolling: none;
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+// img {
+//     max-width: 100%;
+//     height: auto;
+// }
+
+.gItem,
+.tabBtn {
+    cursor: pointer;
+}
+
+.tabPanel,
+.collapseBody,
+.load-hidden {
+    display: none;
+}
+
+.tabBtn {
+    &.active {
+        pointer-events: none;
+    }
+}
+
+.tabPanel {
+    &.open {
+        display: block;
+    }
+}
+
+iframe {
+    vertical-align: middle;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.lg-progress-bar .lg-progress {
+    background-color: var(--color-pri) !important;
+}
+
+.fancybox__thumbs .carousel__slide .fancybox__thumb::after {
+    border-color: var(--color-pri) !important;
+    border-width: 3px !important;
+}
+
+.fancybox__progress {
+    background: var(--color-pri) !important;
+}
+
+.lg-actions .lg-prev,
+.lg-actions .lg-next {
+    background-color: transparent !important;
+}
+
+.lg-actions .lg-prev {
+    &::before {
+        content: '\f104' !important;
+        font-family: 'Font Awesome 6 Pro';
+        font-size: 4rem !important;
+    }
+
+    &::after {
+        display: none;
+    }
+}
+
+.lg-actions .lg-next {
+    &::before {
+        content: '\f105' !important;
+        font-family: 'Font Awesome 6 Pro';
+        font-size: 4rem !important;
+    }
+}
+
+.lg-backdrop {
+    background: rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(0.8rem) !important;
+}
+
+.lg-outer .lg-thumb-outer,
+.lg-toolbar {
+    background: transparent !important;
+}
+
+.lg-outer .lg-thumb-item {
+    border: 3px solid #fff !important;
+}
+
+.lg-outer .lg-thumb-item.active,
+.lg-outer .lg-thumb-item:hover {
+    border-color: var(--color-pri) !important;
+}
+
+// ios
+.menu-ios {
+    -webkit-overflow-scrolling: touch;
+}
+
+// mona-content
+
+.mona-content {
+    color: var(--color-text);
+    font-size: 1.6rem;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 700;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    h2 {
+        font-size: 2.6rem;
+    }
+
+    h3 {
+        font-size: 2.4rem;
+    }
+
+    h4 {
+        font-size: 2.2rem;
+    }
+
+    h5 {
+        font-size: 2.1rem;
+    }
+
+    h6 {
+        font-size: 2rem;
+    }
+
+    * {
+        font-family: var(--font-pri) !important;
+    }
+
+    a {
+        color: blue;
+        word-break: break-all;
+    }
+
+    .wp-caption {
+        width: 100% !important;
+        border: none;
+
+        .wp-caption-text {
+            font-size: 1.6rem;
+            display: block;
+            padding-left: 1rem !important;
+            border-left: 2px solid var(--color-pri);
+            margin-top: 1.2rem !important;
+            text-align: left;
+        }
+    }
+
+    .box-quote {
+        padding-left: 2rem !important;
+        border-left: 2px solid #2aba9d;
+        margin-top: 1.6rem !important;
+
+        p {
+            color: #171717;
+            font-size: 2.4rem;
+            font-weight: 500;
+            font-style: italic;
+            padding-bottom: 3.2rem !important;
+
+            @media (max-width: 1199px) {
+                padding-bottom: 1.6rem !important;
+            }
+        }
+
+        span {
+            font-size: #525252;
+        }
+    }
+
+    iframe {
+        aspect-ratio: 16/9;
+        object-fit: cover;
+    }
+
+    pre {
+        >code {
+            position: relative;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--color-pri);
+            background: rgba(57, 59, 209, 0.1);
+            padding: 0.6rem 1.2rem !important;
+            border-radius: 0.4rem;
+            width: fit-content;
+            cursor: pointer;
+
+            &.active {
+                &::before {
+                    opacity: 1;
+                    pointer-events: auto;
+                    transform: translate(0, 0);
+                }
+            }
+
+            &::before {
+                content: 'Copied!';
+                position: absolute;
+                display: flex;
+                align-items: center;
+                top: -100%;
+                right: 0;
+                font-size: 1.4rem;
+                font-weight: 400;
+                font-style: normal;
+                line-height: 120%;
+                border-radius: 0.4rem;
+                min-height: 3rem;
+                padding: 0rem 1rem;
+                background: #525252;
+                color: #fff;
+                transform: translate(1rem, 0);
+                opacity: 0;
+                pointer-events: none;
+                @include transition(0.2s, ease);
+            }
+
+            &::after {
+                content: '\f0c5';
+                font-family: 'Font Awesome 6 Pro';
+                font-style: normal;
+            }
+        }
+    }
+}

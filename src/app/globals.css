@@ -1,0 +1,166 @@
+@import "tailwindcss";
+@import "../../public/library/fontawesome/css/all.css";
+@import "../../public/library/fontawesome/fontawesome/fontawesome.css";
+
+
+@layer base {
+    html {
+        font-size: 10px;
+    }
+
+    body {
+        font-size: 1.6rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    button,
+    select {
+        font-family: var(--font-pri);
+        border: none;
+        outline: none;
+        -webkit-appearance: none;
+        background-color: transparent;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    input,
+    textarea {
+        font-size: 1.6rem;
+        color: var(--color-text);
+        font-family: var(--font-pri);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    @media screen and (max-width: 1200px) {
+
+        input,
+        textarea,
+        input::placeholder,
+        textarea::placeholder {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+@layer components {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@layer utilities {
+    .gap-16 {
+        gap: 1.6rem;
+    }
+
+    .cl-pri {
+        color: var(--color-pri);
+    }
+
+    .cl-sec {
+        color: var(--color-sec);
+    }
+
+    .cl-blue {
+        color: var(--blue);
+    }
+
+    .cl-text {
+        color: var(--color-text);
+    }
+
+    .hover\:cl-pri:hover {
+        color: var(--color-pri);
+    }
+
+    .m-center {
+        margin: 0 auto;
+    }
+
+    .-mg-y-12 {
+        margin: calc(-1 * var(--it-pd)) 0;
+    }
+
+    .-mg-x-12 {
+        margin: 0 calc(-1 * var(--it-pd));
+    }
+
+    .-mg-12 {
+        margin: calc(-1 * var(--it-pd));
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: calc(-1 * var(--it-pd));
+    }
+
+    .col,
+    .swiper-slide {
+        width: 100%;
+        padding: var(--it-pd);
+    }
+
+    .rows-3 .col,
+    .rows-3 .swiper-slide {
+        width: calc(4/12*100%) !important;
+    }
+
+    .rows-4 .col,
+    .rows-4 .swiper-slide {
+        width: calc(3/12*100%) !important;
+    }
+
+    .ss-pd {
+        padding: var(--ss-pd) 0;
+    }
+
+    .ss-pd-t {
+        padding-top: var(--ss-pd);
+    }
+
+    .ss-pd-b {
+        padding-bottom: var(--ss-pd);
+    }
+
+    @media (max-width: 768px) {
+
+        .rows-3 .col,
+        .rows-3 .swiper-slide {
+            width: 50% !important;
+        }
+    }
+
+    @media (max-width: 575px) {
+
+        .rows-3 .col,
+        .rows-3 .swiper-slide {
+            width: 75% !important;
+        }
+    }
+}
+
+@theme {
+    --breakpoint-xs: 480px;
+    --breakpoint-sm: 650px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1200px;
+    --breakpoint-2xl: 1440px;
+}

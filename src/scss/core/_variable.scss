@@ -1,0 +1,71 @@
+:root {
+    --font-pri: 'Inter';
+    --w-logo: 13.3rem;
+    --size-hd: 6.5rem;
+    --ss-pd: 12rem;
+    --it-pd: 1.6rem;
+    --ctn: 124.6rem;
+    --re-ctn: calc((100vw - var(--ctn)) / 2);
+    --re-ctn-2: calc(100vw - (100vw - var(--ctn)) / 2);
+    --ctn-2: 150rem;
+    --dark: #03193d;
+    // color
+    --color-pri: #2282ff;
+    --linear-pri: linear-gradient(135deg, var(--blue-dark, #2282ff) 14.64%, var(--pink, #ff3dc8) 85.36%);
+    --linear-sec: linear-gradient(90deg, #3a3fff 0%, #ff00ff 100%);
+    --linear-trans-1: linear-gradient(90deg,
+            rgba(226, 240, 252, 0.1) 1.44%,
+            rgba(189, 224, 250, 0.1) 12.95%,
+            rgba(130, 215, 255, 0.1) 32.65%,
+            rgba(10, 87, 223, 0.1) 71.9%,
+            rgba(226, 240, 252, 0.1) 98.16%);
+    --linear-trans-2: linear-gradient(180deg,
+            var(--blue-dark, rgba(34, 130, 255, 0.2)) 0%,
+            var(--pink, rgba(255, 61, 200, 0.2)) 100%);
+    --linear-pink: linear-gradient(180deg, var(--pink, #ff3dc8) 0%, var(--bg-0, rgba(0, 23, 60, 0)) 43.75%);
+    --color-text: #ffffff;
+    --white: #ffffff;
+    --black: #000000;
+    --blue: #2282ff;
+    --gray: #a2a2a2;
+
+    //Distance
+    --rds-6: 0.6rem;
+    --rds-8: 0.8rem;
+    --rds-10: 1rem;
+    --rds-12: 1.2rem;
+    --rds-16: 1.6rem;
+    --rds-20: 2rem;
+    --rds-24: 2.4rem;
+    --rds-100: 100rem;
+    // cubic
+    --cubic: cubic-bezier(0.72, 0.04, 0.49, 0.82);
+
+    @media (max-width: 1199px) {
+        --w-logo: 11rem;
+        --size-hd: 5.5rem;
+        --ss-pd: 6rem;
+        --it-pd: 0.8rem;
+        --rds-8: 0.4rem;
+        --rds-10: 0.5rem;
+        --rds-12: 0.6rem;
+        --rds-16: 0.8rem;
+        --rds-20: 1rem;
+        --rds-24: 1.2rem;
+    }
+
+    @media (max-width: 575px) {
+        --w-logo: 10rem;
+        --it-pd: 0.6rem;
+    }
+}
+
+//Responsive
+$res-mobile: 1199px;
+$res-mobile-min: 1200px;
+$res-tablet: 1024px;
+$res-tablet-991: 991px;
+$res-tablet-min: 767px;
+$res-tablet-max: 767px;
+$mobile: 575px;
+$mobile-sm: 370px;

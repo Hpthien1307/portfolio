@@ -1,0 +1,108 @@
+.hd {
+    height: var(--size-hd);
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        opacity: 0;
+        pointer-events: none;
+        background: rgba(255, 255, 255, .2);
+        backdrop-filter: blur(1rem);
+        @include transition(.4s, ease);
+    }
+
+    &.hd-sticky {
+        &:after {
+            opacity: 1;
+            pointer-events: visible;
+        }
+    }
+
+}
+
+.hd-nav {
+    .menu-list {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        margin: 0 -1rem;
+
+        .menu-link {
+            padding: 0 1rem;
+        }
+    }
+}
+
+.hd-logo {
+    display: block;
+    height: 100%;
+    @include mid-flex;
+
+    .custom-logo-link {
+        display: flex;
+        width: var(--w-logo);
+        @include transition(0.4s, ease);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            @include transition(0.4s, ease);
+        }
+    }
+}
+
+.hd-nav {
+    .menu-list {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        margin: 0 -1rem;
+
+        .menu-item {
+            &.active {
+                .menu-link {
+                    &:after {
+                        width: 100%;
+                        left: 0;
+                    }
+                }
+            }
+
+            .menu-link {
+                padding: 0 1rem;
+                display: flex;
+                position: relative;
+                overflow: hidden;
+                padding: 1rem 1.6rem;
+                border-radius: var(--rds-100);
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 0;
+                    height: 100%;
+                    background: var(--linear-pri);
+                    z-index: -1;
+                    @include transition(0.4s, ease);
+                }
+            }
+
+            @include hover() {
+                .menu-link {
+                    &:after {
+                        width: 100%;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

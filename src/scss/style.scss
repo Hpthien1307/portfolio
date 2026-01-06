@@ -1,0 +1,27 @@
+// core
+// @import './core/reset.scss';
+@import './core/mixin.scss';
+@import './core/variable.scss';
+@import './core/base.scss';
+@import './core/font.scss';
+
+// components
+@import './components/header.scss';
+@import './components//footer';
+@import './components/btn.scss';
+@import './components/menu.scss';
+@import './components/socials';
+@import './components/animations';
+@import './components/swiper';
+@import './components/hambuger';
+@import './components/mobile';
+
+// partials
+@import './partials/skill-item.scss';
+@import './partials/project-item.scss';
+@import './partials/achive-item.scss';
+
+// pages
+
+@import './pages/common';
+@import './pages/home';

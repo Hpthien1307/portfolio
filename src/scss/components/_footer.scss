@@ -1,0 +1,104 @@
+.ft {
+    .bg-ab {
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, var(--bg-0, rgba(3, 25, 61, 0)) 94.32%, var(--pink, #ff3dc8) 101.48%),
+                linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), var(--bg, #03193d);
+            mix-blend-mode: lighten;
+        }
+
+        img {
+            opacity: 0.1;
+        }
+    }
+
+    .ft-wrap {
+        @include min($res-mobile-min) {
+            max-height: 70rem;
+        }
+    }
+
+    .custom-logo-link {
+        display: block;
+        width: 14rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}
+
+.ft-menu {
+    .menu-list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .menu-item {
+            .menu-link {
+                display: block;
+                padding: 1rem 1.2rem;
+                @include transition(0.3s, ease);
+
+                @include hover() {
+                    color: var(--color-pri);
+                }
+            }
+        }
+    }
+}
+
+.content-info {
+    .tt {
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 1rem;
+            height: 1rem;
+            background-color: var(--color-pri);
+            border-radius: var(--rds-100);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            left: 0;
+            transform: translate(0, -50%);
+            width: 1rem;
+            height: 1rem;
+            background-color: var(--color-pri);
+            border-radius: var(--rds-100);
+            animation: scaleAni 1.6s linear infinite;
+        }
+    }
+
+    .menu-list {
+        .menu-item {
+            >img {
+                @include item-shrink(2.4rem);
+                display: flex;
+            }
+
+            .menu-link {
+                @include transition(0.3s, ease);
+
+                @include hover() {
+                    color: var(--color-pri);
+                }
+            }
+        }
+    }
+}

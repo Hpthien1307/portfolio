@@ -1,0 +1,24 @@
+.pj-item {
+
+    .inner {
+        border-radius: var(--rds-24);
+        background: var(--linear-trans-1);
+    }
+
+    .content {
+        padding: 2rem;
+    }
+
+    .pj-tt {
+        @include fz-24;
+
+        @include hover() {
+            color: var(--color-pri);
+        }
+    }
+
+    .pj-tt,
+    .desc {
+        @include lc(2);
+    }
+}

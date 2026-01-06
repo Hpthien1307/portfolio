@@ -1,0 +1,10 @@
+.skill-item {
+    .inner {
+        border-radius: var(--rds-24);
+        background: var(--linear-trans-2);
+        padding: 4rem;
+        @include max($res-mobile) {
+            padding: 2rem;
+        }
+    }
+}

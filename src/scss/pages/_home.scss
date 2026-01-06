@@ -1,0 +1,79 @@
+.sec-skill {
+    .skill-list {
+        .col {
+            width: calc(4 / 12 * 100%);
+
+            @include max($mobile) {
+                width: 50%;
+            }
+        }
+    }
+}
+
+.hero {
+    .img-me {
+        position: relative;
+        border-radius: var(--rds-24);
+        overflow: visible;
+        background: linear-gradient(180deg, var(--Brand-Sky-Blue-950, rgba(22, 41, 80, 0.2)) 0%, var(--Brand-Sky-Blue-900, rgba(17, 66, 105, 0.2)) 100%);
+        backdrop-filter: blur(1rem);
+        padding: 2.4rem;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translate(40%, 40%) rotate(45deg);
+            background: url(/_next/static/media/rocket.449068e5.gif);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            width: 15rem;
+            height: 15rem;
+            z-index: 1;
+        }
+    }
+
+    .title-lg {
+        position: relative;
+        padding: 1.2rem 1.6rem;
+        border-radius: 1rem;
+        width: fit-content;
+
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--linear-trans-1);
+            backdrop-filter: blur(1rem);
+            border-radius: inherit;
+        }
+    }
+}
+
+.about-me {
+
+    .about-me-wrap {
+        min-height: calc(851/1728*100vw);
+    }
+
+    .achive-list-wrap {
+        .achive-list {
+            @include max($mobile) {
+                justify-content: center;
+            }
+        }
+
+        .col {
+            width: calc(4 / 12 * 100%);
+
+            @include max($mobile) {
+                width: 50%;
+            }
+        }
+    }
+}
