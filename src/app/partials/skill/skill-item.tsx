@@ -1,11 +1,7 @@
 import Image from 'next/image';
+import { skillItemProps } from '@/app/types/skill-type';
 
-type SkillItemProps = {
-    icon?: string;
-    text?: string;
-};
-
-export default function SkillItem({ icon, text, ...props }: SkillItemProps) {
+export default function SkillItem({ icon, text, ...props }: skillItemProps) {
     return (
         <div className="skill-item" {...props}>
             <div className="inner border-ln flex flex-col items-center gap-6">

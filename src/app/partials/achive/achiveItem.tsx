@@ -1,12 +1,7 @@
 import CountUp from '@/app/components/ui/reactbits/countUp/countUp';
+import { achiveItemProps } from '@/app/types/achive-type';
 
-type achive = {
-    dataUnit?: string;
-    number?: number;
-    text?: string;
-};
-
-export default function AchiveItem({ dataUnit, number = 0, text }: achive) {
+export default function AchiveItem({ dataUnit, number = 0, text }: achiveItemProps) {
     return (
         <div className="achive-item">
             <div className="inner border-ln flex flex-col items-center justify-center gap-y-6">

@@ -1,6 +1,5 @@
 'use client';
 
-// import { useEffect } from 'react';
 import Image from 'next/image';
 import Btn from './components/button/btn';
 import SkillItem from './partials/skill/skill-item';
@@ -15,7 +14,6 @@ import { achives } from './partials/achive/achiveList';
 import AchiveItem from './partials/achive/achiveItem';
 import TextType from './components/ui/reactbits/textType/textType';
 import ProfileCard from './components/ui/reactbits/profileCard/profileCard';
-// import Lenis from 'lenis';
 import MotionIf from './customHook/motionIf';
 import ScrollVelocity from './components/ui/reactbits/scrollVecocity/scrollVelocity';
 import 'swiper/css';
@@ -23,20 +21,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 export default function Home() {
-    // useEffect(() => {
-    //     const lenis = new Lenis({
-    //         duration: 0.4,
-    //         easing: t => 1 - Math.pow(1 - t, 3)
-    //     });
-
-    //     function raf(time: number) {
-    //         lenis.raf(time);
-    //         requestAnimationFrame(raf);
-    //     }
-
-    //     requestAnimationFrame(raf);
-    // }, []);
-
     const projectFeature = Projects.find(item => item.topic === 'project-feature');
     const projectEcommerce = Projects.find(item => item.topic === 'project-ecommerce');
     const projectProxy = Projects.find(item => item.topic === 'project-proxy');
@@ -137,6 +121,7 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* section velocity*/}
             <section className="sec-scroll-velocity">
                 <div className="scroll-velocity ss-pd-b">
                     <ScrollVelocity
@@ -208,7 +193,6 @@ export default function Home() {
                                             whileInView={{ opacity: 1, y: 0 }}
                                             transition={{
                                                 duration: 1,
-                                                // ease: [0.16, 1, 0.3, 1],
                                                 delay: 0.1 * index
                                             }}
                                             viewport={{ once: true, amount: 0.3 }}

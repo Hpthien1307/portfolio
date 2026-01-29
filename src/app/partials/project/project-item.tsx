@@ -1,14 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { projectItemProps } from '@/app/types/project-type';
 
-type ProjectItemProps = {
-    href?: string;
-    thumbNail?: string;
-    title?: string;
-    description?: string;
-};
-
-export default function ProjectItem({ href, thumbNail, title, description }: ProjectItemProps) {
+export default function ProjectItem({ href, thumbNail, title, description }: projectItemProps) {
     return (
         <div className="pj-item h-full">
             <div className="inner border-ln h-full flex flex-col">
