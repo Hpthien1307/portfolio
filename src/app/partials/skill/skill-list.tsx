@@ -1,9 +1,5 @@
 export const skills = [
     {
-        icon: 'nextjs.png',
-        text: 'Nextjs'
-    },
-    {
         icon: 'reactjs.png',
         text: 'Reactjs'
     },
@@ -26,6 +22,10 @@ export const skills = [
     {
         icon: 'bootstrap.png',
         text: 'Bootstrap'
+    },
+    {
+        icon: 'figma.png',
+        text: 'Figma'
     },
     {
         icon: 'github.png',

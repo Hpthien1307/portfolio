@@ -7,7 +7,7 @@ export default function SkillItem({ icon, text, ...props }: skillItemProps) {
             <div className="inner border-ln flex flex-col items-center gap-6">
                 <div className="icon w-20 h-20 shrink-0 flex max-2xl:w-16">
                     <Image
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-contain brightness-0 invert"
                         src={`images/${icon}`}
                         alt={`${text}`}
                         width={50}

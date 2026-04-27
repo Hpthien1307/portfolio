@@ -24,11 +24,11 @@ export const Projects = [
                     'Chăm sóc sức khỏe Việt là dự án phòng chống Bệnh không lây nhiễm (BKLN) do Davipharm - thành viên của Tập đoàn Adamed phối hợp với Cục Y Tế Dự Phòng - Bộ Y Tế triển khai từ năm 2021.'
             },
             {
-                link: 'https://shri.com.vn/',
-                thumbNail: 'shri.png',
-                title: 'Shri - The New Chapter',
+                link: 'https://sunshinegr.vn/',
+                thumbNail: 'sunshinegr.png',
+                title: 'Sunshinegr',
                 description:
-                    'Re-emerges after 14 years as a premier Mediterranean-inspired rooftop destination, embracing the “Elevate Your Moments” ethos—seamlessly blending culinary arts, multi-sensory experiences, and a journey of meaningful connections, all set against a stunning panoramic view.'
+                    'Born in the heart of Vietnam, we’re here to bring the honest flavors of our land to the world. For us, it’s more than just a shipment - it’s about sharing Vietnam’s rich agricultural heritage with the world. By empowering local farmers and maintaining rigorous standards, Sunshine delivers premium, export-ready produce with scalable supply and competitive pricing, ensuring lasting value in every partnership.'
             },
             {
                 link: 'https://robohub.vn/',

@@ -1,17 +1,17 @@
 export const achives = [
     {
         dataUnit: '+',
-        numberAchive: 100,
+        numberAchive: 30,
         text: 'Dự án'
     },
     {
         dataUnit: '+',
-        numberAchive: 3,
+        numberAchive: 4,
         text: 'Kinh nghiệm'
     },
     {
         dataUnit: '+',
-        numberAchive: 50,
+        numberAchive: 20,
         text: 'Khách hàng'
     }
 ];
