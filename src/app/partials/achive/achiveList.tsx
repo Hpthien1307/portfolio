@@ -1,7 +1,7 @@
 export const achives = [
     {
         dataUnit: '+',
-        numberAchive: 30,
+        numberAchive: 3,
         text: 'Dự án'
     },
     {
