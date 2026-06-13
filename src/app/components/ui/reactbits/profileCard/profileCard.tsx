@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useCallback, useMemo } from 'react';
 import './profileCard.css';
+import Image from 'next/image';
 
 interface ProfileCardProps {
     avatarUrl: string;
@@ -270,9 +271,9 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
             ({
                 '--icon': iconUrl ? `url(${iconUrl})` : 'none',
                 '--grain': grainUrl ? `url(${grainUrl})` : 'none',
-                '--behind-gradient': showBehindGradient ? behindGradient ?? DEFAULT_BEHIND_GRADIENT : 'none',
+                '--behind-gradient': showBehindGradient ? (behindGradient ?? DEFAULT_BEHIND_GRADIENT) : 'none',
                 '--inner-gradient': innerGradient ?? DEFAULT_INNER_GRADIENT
-            } as React.CSSProperties),
+            }) as React.CSSProperties,
         [iconUrl, grainUrl, showBehindGradient, behindGradient, innerGradient]
     );
 
@@ -287,7 +288,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                     <div className="pc-shine" />
                     <div className="pc-glare" />
                     <div className="pc-content pc-avatar-content">
-                        <img
+                        <Image
                             className="avatar"
                             src={avatarUrl}
                             alt={`${name || 'User'} avatar`}
@@ -301,7 +302,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                             <div className="pc-user-info">
                                 <div className="pc-user-details">
                                     <div className="pc-mini-avatar">
-                                        <img
+                                        <Image
                                             src={miniAvatarUrl || avatarUrl}
                                             alt={`${name || 'User'} mini avatar`}
                                             loading="lazy"
