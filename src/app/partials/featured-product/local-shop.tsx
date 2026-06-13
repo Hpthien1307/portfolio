@@ -236,12 +236,12 @@ export default function LocalShopShowcase() {
                                     <Image
                                         src={
                                             activeTab === 'overview'
-                                                ? '/images/localshop_overview.png'
+                                                ? 'images/localshop_overview.png'
                                                 : activeTab === 'storefront'
-                                                  ? '/images/localshop_storefront.png'
+                                                  ? 'images/localshop_storefront.png'
                                                   : activeTab === 'admin'
-                                                    ? '/images/localshop_admin.png'
-                                                    : '/images/localshop_backend.png'
+                                                    ? 'images/localshop_admin.png'
+                                                    : 'images/localshop_backend.png'
                                         }
                                         alt={activeTab}
                                         fill
