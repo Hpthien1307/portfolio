@@ -4,6 +4,14 @@ export const skills = [
         text: 'Reactjs'
     },
     {
+        icon: 'express.png',
+        text: 'Express',
+    },
+    {
+        icon: 'database.png',
+        text: 'MongoDB',
+    },
+    {
         icon: 'sass.png',
         text: 'Sass'
     },

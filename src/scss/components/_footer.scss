@@ -20,7 +20,7 @@
 
     .ft-wrap {
         @include min($res-mobile-min) {
-            max-height: 70rem;
+            max-height: none;
         }
     }
 
@@ -33,6 +33,71 @@
             height: 100%;
             object-fit: contain;
         }
+    }
+
+    .contact-form {
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1.6rem;
+        padding: 4rem;
+        box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3);
+
+        @include max($res-mobile) {
+            padding: 2.8rem;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.8rem;
+            padding: 1.4rem 1.6rem;
+            color: var(--white);
+            font-size: 1.6rem;
+            font-family: var(--font-pri);
+            transition: all 0.3s ease;
+            outline: none;
+
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.35);
+                font-size: 1.6rem;
+                font-weight: 400;
+            }
+
+            &:hover {
+                border-color: rgba(255, 255, 255, 0.2);
+                background: rgba(255, 255, 255, 0.06);
+            }
+
+            &:focus {
+                border-color: var(--color-pri);
+                background: rgba(255, 255, 255, 0.08);
+                box-shadow: 0 0 12px rgba(34, 130, 255, 0.25);
+            }
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 12rem;
+        }
+
+        .form-alert {
+            animation: formAlertFadeIn 0.4s ease-out;
+        }
+    }
+}
+
+@keyframes formAlertFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 

@@ -1,17 +1,13 @@
 'use client';
 
-import Image from 'next/image';
 import Btn from './components/button/btn';
-import SkillItem from './partials/skill/skill-item';
-import { skills } from './partials/skill/skill-list';
+import SkillsVelocity from './partials/skill/skills-velocity';
 import Heading from './components/heading/heading';
 import ProjectItem from './partials/project/project-item';
 import { Projects } from './partials/project/project-list';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { Pagination } from 'swiper/modules';
-import { achives } from './partials/achive/achiveList';
-import AchiveItem from './partials/achive/achiveItem';
 import TextType from './components/ui/reactbits/textType/textType';
 import ProfileCard from './components/ui/reactbits/profileCard/profileCard';
 import MotionIf from './customHook/motionIf';
@@ -19,12 +15,56 @@ import ScrollVelocity from './components/ui/reactbits/scrollVecocity/scrollVeloc
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import dynamic from 'next/dynamic';
+import { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import AboutSection from './partials/about/about-section';
+import LocalShopShowcase from './partials/featured-product/local-shop';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const ExperienceSection = dynamic(() => import('./partials/experience/experience-section'), {
+    ssr: false,
+    loading: () => (
+        <div className="flex items-center justify-center w-full h-full text-white opacity-40 py-20">
+            Đang tải thông tin kinh nghiệm...
+        </div>
+    )
+});
 
 export default function Home() {
     const projectFeature = Projects.find(item => item.topic === 'project-feature');
     const projectEcommerce = Projects.find(item => item.topic === 'project-ecommerce');
     const projectProxy = Projects.find(item => item.topic === 'project-proxy');
     const projectIntroduce = Projects.find(item => item.topic === 'project-introduce');
+
+    useEffect(() => {
+        const pjSections = document.querySelectorAll('.pj');
+        pjSections.forEach(section => {
+            gsap.fromTo(
+                section,
+                { opacity: 0, y: 60 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.0,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none'
+                    }
+                }
+            );
+        });
+
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => {
+                trigger.kill();
+            });
+        };
+    }, []);
 
     return (
         <>
@@ -133,79 +173,18 @@ export default function Home() {
             </section>
 
             {/* section about me */}
-            <section className="sec-about-me" id="achive">
-                <div className="about-me relative ss-pd-b">
-                    <div className="bg-ab absolute top-0 left-0 w-full h-full object-cover mix-blend-lighten">
-                        <Image src="images/earth.png" alt="earth.png" width={1728} height={851} />
-                    </div>
-                    <div className="container">
-                        <div className="about-me-wrap">
-                            <Heading title="Giới thiệu" classTitle="title-pri" classCustom="mb-8">
-                                <p className="desc text-4xl leading-[120%] max-2xl:text-3xl">
-                                    Trước hết, hãy để tôi tự giới thiệu. Tôi là một lập trình viên front-end đến từ
-                                    <br className="max-lg:hidden" />
-                                    tự học, không có bằng đại học. Nhờ những nỗ lực của mình, tôi đã
-                                    <br className="max-lg:hidden" />
-                                    đạt được những gì tôi có ngày hôm nay. Tôi hy vọng rằng hoàn cảnh khó khăn của tôi
-                                    không phải là rào cản
-                                    <br className="max-lg:hidden" />
-                                </p>
-                            </Heading>
-                            <div className="achive-list-wrap">
-                                <div className="achive-list row">
-                                    {achives.map((item, index) => (
-                                        <div className="col" key={index}>
-                                            <MotionIf
-                                                initial={{ opacity: 0, scale: 0, y: 100 }}
-                                                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                                                transition={{
-                                                    duration: 1,
-                                                    delay: 0.1 * index
-                                                }}
-                                                viewport={{ once: true, amount: 0.3 }}
-                                            >
-                                                <AchiveItem
-                                                    dataUnit={item.dataUnit}
-                                                    number={item.numberAchive}
-                                                    text={item.text}
-                                                ></AchiveItem>
-                                            </MotionIf>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <AboutSection />
 
             {/* section skills */}
             <section className="sec-skill" id="skills">
-                <div className="skill relative ss-pd-b">
-                    <div className="container">
-                        <div className="skill-wrap">
-                            <Heading title="Các kĩ năng" classTitle="title-pri" classCustom="mb-8"></Heading>
-                            <div className="skill-list row">
-                                {skills.map((item, index) => (
-                                    <div className="col" key={index}>
-                                        <MotionIf
-                                            initial={{ opacity: 0, y: 100 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            transition={{
-                                                duration: 1,
-                                                delay: 0.1 * index
-                                            }}
-                                            viewport={{ once: true, amount: 0.3 }}
-                                        >
-                                            <SkillItem icon={item.icon} text={item.text}></SkillItem>
-                                        </MotionIf>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <SkillsVelocity />
             </section>
+
+            {/* section experience */}
+            <ExperienceSection />
+
+            {/* section featured product (Local-shop) */}
+            <LocalShopShowcase />
 
             {/* section projects*/}
             <section className="sec-pj" id="projects">

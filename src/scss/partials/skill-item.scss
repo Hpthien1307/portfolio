@@ -8,3 +8,47 @@
         }
     }
 }
+
+.skill-velocity-item {
+    background: var(--linear-trans-2);
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+    transition: all 0.3s ease;
+
+    .icon img {
+        transition:
+            transform 0.3s ease,
+            filter 0.3s ease,
+            opacity 0.3s ease;
+    }
+
+    @include hover() {
+        background: var(--linear-trans-1);
+        border-color: rgba(34, 130, 255, 0.45) !important;
+        box-shadow: 0 10px 25px -10px rgba(34, 130, 255, 0.35);
+        transform: translateY(-3px) scale(1.02);
+
+        .icon img {
+            transform: scale(1.1);
+            filter: none !important;
+            opacity: 1 !important;
+        }
+    }
+}
+
+.sec-skill-horizontal {
+    .skills-track {
+        display: flex;
+        will-change: transform;
+    }
+
+    .skill-card {
+        background: var(--linear-trans-2);
+        backdrop-filter: blur(1.5rem);
+        -webkit-backdrop-filter: blur(1.5rem);
+        border-radius: var(--rds-24);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+        padding: 4rem 2rem;
+    }
+}

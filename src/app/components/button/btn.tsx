@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import MagneticWrapper from '../magnetic-wrapper';
 
 type BtnProps = {
     href?: string;
@@ -10,15 +11,19 @@ type BtnProps = {
 export default function Btn({ href, className = '', children, ...props }: BtnProps) {
     if (href) {
         return (
-            <Link href={href} className={`btn ${className}`} {...props}>
-                {children}
-            </Link>
+            <MagneticWrapper>
+                <Link href={href} className={`btn ${className}`} {...props}>
+                    {children}
+                </Link>
+            </MagneticWrapper>
         );
     }
 
     return (
-        <button className={`btn ${className}`} {...props}>
-            {children}
-        </button>
+        <MagneticWrapper>
+            <button className={`btn ${className}`} {...props}>
+                {children}
+            </button>
+        </MagneticWrapper>
     );
 }

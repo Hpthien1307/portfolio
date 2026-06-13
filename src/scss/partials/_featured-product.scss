@@ -1,0 +1,59 @@
+.sec-featured-product {
+    position: relative;
+    z-index: 5;
+
+    .localshop-card {
+        border-radius: var(--rds-24);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: linear-gradient(180deg, rgba(22, 41, 80, 0.25) 0%, rgba(17, 66, 105, 0.25) 100%);
+        backdrop-filter: blur(1.5rem);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+        @include max($mobile) {
+            border-radius: var(--rds-16);
+        }
+    }
+
+    .btn-featured-visit {
+        border-radius: var(--rds-12);
+        box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.3);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(59, 130, 246, 0.45);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+
+    .localshop-preview-container {
+        border-radius: var(--rds-16);
+        background: rgba(0, 0, 0, 0.4);
+        box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 
+                    inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
+        transition: border-color 0.3s ease;
+
+        &:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+    }
+}
+
+// Simple fade-in keyframes for simulation changes
+@keyframes fadeInMockup {
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeInMockup 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

@@ -15,6 +15,16 @@ export const Menu = [
         className: 'page-skill'
     },
     {
+        href: '#experience',
+        label: 'Kinh nghiệm',
+        className: 'page-experience'
+    },
+    {
+        href: '#localshop',
+        label: 'Sản phẩm',
+        className: 'page-localshop'
+    },
+    {
         href: '#projects',
         label: 'Dự án',
         className: 'page-projects'

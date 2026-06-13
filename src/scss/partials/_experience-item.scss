@@ -1,0 +1,90 @@
+.sec-experience {
+    position: relative;
+    overflow: hidden;
+
+    .timeline-container {
+        padding: 4rem 0;
+    }
+
+    .timeline-line-bg {
+        position: absolute;
+        left: 50% !important;
+        margin-left: -1px !important;
+        background: #334155 !important; // slate-gray base line
+        transform: none !important;
+    }
+
+    .timeline-line {
+        position: absolute;
+        left: 50% !important;
+        margin-left: -1px !important;
+        background: var(--linear-pri) !important;
+    }
+
+    .experience-card {
+        background: linear-gradient(180deg, rgba(22, 41, 80, 0.4) 0%, rgba(17, 66, 105, 0.4) 100%);
+        backdrop-filter: blur(1.5rem);
+        -webkit-backdrop-filter: blur(1.5rem);
+        transition: all 0.4s ease;
+
+        @include hover() {
+            transform: translateY(-5px);
+            background: linear-gradient(180deg, rgba(22, 41, 80, 0.6) 0%, rgba(17, 66, 105, 0.6) 100%);
+            box-shadow: 0 15px 35px -15px rgba(34, 130, 255, 0.45);
+        }
+    }
+
+    .project-link {
+        transition: color 0.3s ease;
+        position: relative;
+        text-decoration: none !important;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--white);
+            transition: width 0.3s ease;
+        }
+
+        @include hover() {
+            color: var(--white) !important;
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+
+    .tool-tag {
+        transition: all 0.3s ease;
+        
+        @include hover() {
+            background: rgba(34, 130, 255, 0.15) !important;
+            border-color: rgba(34, 130, 255, 0.4) !important;
+            color: var(--white) !important;
+            transform: scale(1.05);
+        }
+    }
+}
+
+// Media Query override specifically for mobile stacking layout
+@media (max-width: 767px) {
+    .sec-experience {
+        .split-wrapper {
+            min-height: auto !important;
+        }
+
+        .card-wrapper {
+            position: static !important;
+            left: auto !important;
+            top: auto !important;
+            transform: none !important;
+            width: 100% !important;
+            max-width: none !important;
+            margin: 0 !important;
+        }
+    }
+}

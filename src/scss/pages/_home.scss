@@ -55,24 +55,29 @@
     }
 }
 
-.about-me {
-
-    .about-me-wrap {
-        min-height: calc(851/1728*100vw);
-    }
-
+.sec-about-me {
     .achive-list-wrap {
+        width: 100%;
+        margin-top: 2.4rem;
+
         .achive-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.4rem;
+            width: 100%;
+
             @include max($mobile) {
-                justify-content: center;
+                gap: 1.6rem;
             }
         }
 
-        .col {
-            width: calc(4 / 12 * 100%);
+        .achive-col {
+            flex: 1;
+            min-width: 25rem; // ensures they wrap nicely if the viewport is narrow
 
             @include max($mobile) {
-                width: 50%;
+                flex: unset;
+                width: 100%;
             }
         }
     }

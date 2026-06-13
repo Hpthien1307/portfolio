@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import MagneticWrapper from '../magnetic-wrapper';
 
 type socials = {
     classCustom?: string;
@@ -38,9 +39,11 @@ export default function Socials({ classCustom }: socials) {
             <div className="social-list flex items-center gap-6">
                 {icons &&
                     icons.map((item, i) => (
-                        <Link key={i} href={item.href} className="social-link">
-                            <Image src={`images/${item.path}`} alt={item.alt} width={40} height={40} />
-                        </Link>
+                        <MagneticWrapper key={i} range={0.45}>
+                            <Link href={item.href} className="social-link inline-block">
+                                <Image src={`images/${item.path}`} alt={item.alt} width={40} height={40} />
+                            </Link>
+                        </MagneticWrapper>
                     ))}
             </div>
         </div>
