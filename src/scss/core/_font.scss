@@ -1,3 +1,5 @@
+@use './mixin' as *;
+
 @mixin fz-240 {
     --f-sz: clamp(10rem, calc(-18rem + 35vw), 24rem);
     font-size: var(--f-sz);
@@ -65,7 +67,7 @@
 }
 
 @mixin fz-55 {
-    --f-sz: clamp(3.2rem,calc(-1.4rem + 5.75vw), 5.5rem);
+    --f-sz: clamp(3.2rem, calc(-1.4rem + 5.75vw), 5.5rem);
     font-size: var(--f-sz);
 }
 @mixin fz-54 {
@@ -75,12 +77,10 @@
 @mixin fz-52 {
     --f-sz: clamp(3rem, calc(-1.4rem + 5.5vw), 5.2rem);
     font-size: var(--f-sz);
-
 }
 @mixin fz-50 {
     --f-sz: clamp(3rem, calc(-1rem + 5vw), 5rem);
     font-size: var(--f-sz);
-
 }
 
 @mixin fz-48 {
@@ -111,7 +111,6 @@
 @mixin fz-38 {
     --f-sz: clamp(2.6rem, calc(0.2rem + 3vw), 3.8rem);
     font-size: var(--f-sz);
-
 }
 
 @mixin fz-36 {
@@ -127,7 +126,6 @@
 @mixin fz-34 {
     --f-sz: clamp(2.4rem, calc(0.4rem + 2.5vw), 3.4rem);
     font-size: var(--f-sz);
-
 }
 
 @mixin fz-32 {
@@ -148,7 +146,6 @@
 @mixin fz-28 {
     --f-sz: clamp(2.2rem, calc(1rem + 1.5vw), 2.8rem);
     font-size: var(--f-sz);
-
 }
 
 @mixin fz-26 {
@@ -194,7 +191,7 @@
 @mixin fz-16 {
     --f-sz: 1.6rem;
     font-size: var(--f-sz);
-    @include max(800px){
+    @include max(800px) {
         --f-sz: 1.4rem;
     }
 }
@@ -202,7 +199,7 @@
 @mixin fz-15 {
     --f-sz: 1.5rem;
     font-size: var(--f-sz);
-    @include max(800px){
+    @include max(800px) {
         --f-sz: 1.3rem;
     }
 }
@@ -210,7 +207,7 @@
 @mixin fz-14 {
     --f-sz: 1.4rem;
     font-size: var(--f-sz);
-    @include max(800px){
+    @include max(800px) {
         --f-sz: 1.2rem;
     }
 }
@@ -240,36 +237,36 @@
     font-size: var(--f-sz);
 }
 
-.f-40{
+.f-40 {
     @include fz-40;
 }
-.f-36{
+.f-36 {
     @include fz-36;
 }
-.f-32{
+.f-32 {
     @include fz-32;
 }
-.f-24{
+.f-24 {
     font-size: 2.4rem;
 }
-.t-18{
+.t-18 {
     font-size: 1.8rem;
 }
-.t-20{
+.t-20 {
     font-size: 2rem;
 }
-.t-24{
+.t-24 {
     font-size: 2.4rem;
 }
-.t-28{
+.t-28 {
     @include fz-28;
 }
-.t-32{
+.t-32 {
     @include fz-32;
 }
-.t-36{
+.t-36 {
     @include fz-36;
 }
-.t-40{
+.t-40 {
     @include fz-40;
 }

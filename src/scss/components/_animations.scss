@@ -1,9 +1,13 @@
+@use '../core/index' as *;
+@use 'sass:math';
+
 @function multiple-box-shadow($n) {
-    $value: #{random(2000)}px #{random(2000)}px #fff;
+    $value: #{math.random(2000)}px #{math.random(2000)}px #fff;
 
     @for $i from 2 through $n {
-        $value: #{$value},
-        #{random(2000)}px #{random(2000)}px #fff;
+        $value:
+            #{$value},
+            #{math.random(2000)}px #{math.random(2000)}px #fff;
     }
 
     @return $value;

@@ -1,3 +1,5 @@
+@use '../core/index' as *;
+
 .skill-item {
     .inner {
         border-radius: var(--rds-24);

@@ -1,3 +1,5 @@
+@use '../core/index' as *;
+
 .socials-block {
     .social-link {
         @include item-shrink(4rem);

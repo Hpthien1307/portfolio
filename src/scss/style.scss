@@ -1,29 +1,24 @@
-// core
-// @import './core/reset.scss';
-@import './core/mixin.scss';
-@import './core/variable.scss';
-@import './core/base.scss';
-@import './core/font.scss';
+@use './core' as *;
 
 // components
-@import './components/header.scss';
-@import './components//footer';
-@import './components/btn.scss';
-@import './components/menu.scss';
-@import './components/socials';
-@import './components/animations';
-@import './components/swiper';
-@import './components/hambuger';
-@import './components/mobile';
+@use './components/header.scss' as *;
+@use './components/footer' as *;
+@use './components/btn.scss' as *;
+@use './components/menu.scss' as *;
+@use './components/socials' as *;
+@use './components/animations' as *;
+@use './components/swiper' as *;
+@use './components/hambuger' as *;
+@use './components/mobile' as *;
 
 // partials
-@import './partials/skill-item.scss';
-@import './partials/project-item.scss';
-@import './partials/achive-item.scss';
-@import './partials/experience-item.scss';
-@import './partials/featured-product.scss';
+@use './partials/skill-item.scss' as *;
+@use './partials/project-item.scss' as *;
+@use './partials/achive-item.scss' as *;
+@use './partials/experience-item.scss' as *;
+@use './partials/featured-product.scss' as *;
 
 // pages
 
-@import './pages/common';
-@import './pages/home';
+@use './pages/common' as *;
+@use './pages/home' as *;
