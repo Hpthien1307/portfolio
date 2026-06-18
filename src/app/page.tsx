@@ -91,7 +91,7 @@ export default function Home() {
                                             </h2>
                                         </MotionIf>
                                         <MotionIf
-                                            className="sub-text text-3xl sm:text-5xl font-semibold"
+                                            className="sub-text text-3xl sm:text-5xl font-semibold max-sm:w-full max-sm:text-center"
                                             initial={{ opacity: 0, scale: 0, y: 100 }}
                                             whileInView={{ opacity: 1, scale: 1, y: 0 }}
                                             transition={{
@@ -102,7 +102,7 @@ export default function Home() {
                                             viewport={{ once: true, amount: 0.3 }}
                                         >
                                             Hiện tại mình là
-                                            <span className="cl-pri">
+                                            <span className="cl-pri max-sm:block max-sm:mt-2">
                                                 <TextType
                                                     text={[' Front End Developer', ' UI/UX Developer', ' coder']}
                                                     typingSpeed={55}

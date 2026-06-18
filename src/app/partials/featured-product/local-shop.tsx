@@ -59,9 +59,19 @@ export default function LocalShopShowcase() {
     ];
 
     const techBadges: Record<TabType, string[]> = {
-        overview: ['React', 'Node.js', 'Express', 'MongoDB', 'Vite', 'TailwindCSS v4', 'JWT'],
-        storefront: ['React', 'Vite', 'TailwindCSS v4', 'Swiper', 'Radix UI', 'Axios'],
-        admin: ['React', 'Vite', 'Radix UI', 'TailwindCSS', 'React Hook Form', 'Zod'],
+        overview: [
+            'React + Vite',
+            'Node.js',
+            'Express',
+            'MongoDB',
+            'TailwindCSS v4',
+            'Sass',
+            'JWT',
+            'Radix UI',
+            'Axios'
+        ],
+        storefront: ['React + Vite', 'TailwindCSS v4', 'Sass', 'React Query', 'Zustand', 'Radix UI', 'Axios'],
+        admin: ['React + Vite', 'Radix UI', 'TailwindCSS', 'Sass', 'React Hook Form', 'Zod', 'Zustand', 'React Query'],
         backend: ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'JWT Auth', 'Bcrypt']
     };
 
