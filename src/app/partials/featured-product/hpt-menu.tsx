@@ -235,10 +235,10 @@ export default function HptMenuShowcase() {
                                     <Image
                                         src={
                                             activeTab === 'overview'
-                                                ? '/images/hpt-menu-1.png'
+                                                ? 'images/hpt-menu-1.png'
                                                 : activeTab === 'storefront'
-                                                  ? '/images/hpt-menu-2.png'
-                                                  : '/images/localshop_backend.png'
+                                                  ? 'images/hpt-menu-2.png'
+                                                  : 'images/localshop_backend.png'
                                         }
                                         alt={activeTab}
                                         fill
