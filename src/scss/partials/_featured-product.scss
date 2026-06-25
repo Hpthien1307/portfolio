@@ -4,7 +4,7 @@
     position: relative;
     z-index: 5;
 
-    .localshop-card {
+    .localshop-card, .hptmenu-card {
         border-radius: var(--rds-24);
         border: 1px solid rgba(255, 255, 255, 0.1);
         background: linear-gradient(180deg, rgba(22, 41, 80, 0.25) 0%, rgba(17, 66, 105, 0.25) 100%);
@@ -31,7 +31,7 @@
         }
     }
 
-    .localshop-preview-container {
+    .localshop-preview-container, .hptmenu-preview-container {
         border-radius: var(--rds-16);
         background: rgba(0, 0, 0, 0.4);
         box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 
@@ -40,6 +40,12 @@
 
         &:hover {
             border-color: rgba(59, 130, 246, 0.3);
+        }
+    }
+
+    .hptmenu-preview-container {
+        &:hover {
+            border-color: rgba(16, 185, 129, 0.3) !important;
         }
     }
 }

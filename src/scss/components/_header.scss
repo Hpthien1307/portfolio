@@ -13,9 +13,9 @@
         z-index: -2;
         opacity: 0;
         pointer-events: none;
-        background: rgba(255, 255, 255, .2);
+        background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(1rem);
-        @include transition(.4s, ease);
+        @include transition(0.4s, ease);
     }
 
     &.hd-sticky {
@@ -25,6 +25,9 @@
         }
     }
 
+    .container {
+        max-width: 130rem;
+    }
 }
 
 .hd-nav {

@@ -21,6 +21,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutSection from './partials/about/about-section';
 import LocalShopShowcase from './partials/featured-product/local-shop';
+import HptMenuShowcase from './partials/featured-product/hpt-menu';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -185,6 +186,9 @@ export default function Home() {
 
             {/* section featured product (Local-shop) */}
             <LocalShopShowcase />
+
+            {/* section featured product (HPT Menu) */}
+            <HptMenuShowcase />
 
             {/* section projects*/}
             <section className="sec-pj" id="projects">

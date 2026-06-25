@@ -21,8 +21,13 @@ export const Menu = [
     },
     {
         href: '#localshop',
-        label: 'Sản phẩm',
+        label: 'Local Shop',
         className: 'page-localshop'
+    },
+    {
+        href: '#hptmenu',
+        label: 'HPT Menu',
+        className: 'page-hptmenu'
     },
     {
         href: '#projects',

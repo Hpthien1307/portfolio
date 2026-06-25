@@ -5,11 +5,19 @@ export const skills = [
     },
     {
         icon: 'express.png',
-        text: 'Express',
+        text: 'Express'
+    },
+    {
+        icon: 'nestjs.png',
+        text: 'Nestjs'
+    },
+    {
+        icon: 'postgreSQL.png',
+        text: 'PostgreSQL'
     },
     {
         icon: 'database.png',
-        text: 'MongoDB',
+        text: 'MongoDB'
     },
     {
         icon: 'sass.png',
