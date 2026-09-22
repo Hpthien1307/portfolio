@@ -94,10 +94,10 @@ export default function AboutSection() {
         <section
             ref={sectionRef}
             className="sec-about-me w-screen h-screen relative overflow-hidden flex items-center justify-center max-md:h-auto max-md:py-16"
-            id="achive"
+            id="achives"
         >
             {/* Desktop Large Zooming Text (fully white text, zoom into 'T') */}
-            <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none md:flex hidden">
+            <div className="absolute inset-0 items-center justify-center z-10 pointer-events-none md:flex hidden">
                 <h1
                     ref={wordRef}
                     className="text-center font-black uppercase text-white select-none text-[12vw] tracking-wider leading-none"
@@ -117,11 +117,13 @@ export default function AboutSection() {
                         <Heading title="Giới thiệu" classTitle="title-pri" classCustom="mb-4 text-left" />
                     </div>
 
-                    <p className="desc text-5xl text-center leading-[160%] text-white font-medium max-lg:text-3xl max-md:text-2xl">
-                        Trước hết, hãy để tôi tự giới thiệu. Tôi là một lập trình viên front-end tự học, không có bằng
-                        đại học. Nhờ những nỗ lực phi thường của mình, tôi đã đạt được những gì tôi có ngày hôm nay. Tôi
-                        hy vọng rằng hoàn cảnh xuất phát điểm của tôi không phải là rào cản, mà là động lực thúc đẩy tôi
-                        không ngừng phát triển.
+                    <p className="desc text-4xl text-center leading-[160%] text-white font-medium max-lg:text-3xl max-md:text-2xl">
+                        Là một Frontend Developer hoàn toàn tự học, không qua trường lớp Đại học/Cao đẳng, tôi đã tự tìm
+                        kiếm cơ hội và bươn chải qua hơn 30 dự án thực tế để tích lũy 4+ năm kinh nghiệm cắt giao diện
+                        chuẩn Pixel-Perfect & Responsive. Không dừng lại ở UI/UX cốt lõi, tôi chủ động nâng tầm tư duy
+                        Fullstack qua các dự án cá nhân bằng ReactJS, Next.js, TypeScript, Redux Toolkit và AI Tools.
+                        Với sự chủ động và khả năng tự nghiên cứu cao, tôi mong muốn đóng góp giá trị lâu dài cho công
+                        ty.
                     </p>
 
                     <div className="achive-list-wrap w-full mt-4">

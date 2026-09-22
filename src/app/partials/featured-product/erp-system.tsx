@@ -2,22 +2,21 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Heading from '../../components/heading/heading';
-import { ShoppingBag, Database, ExternalLink, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ClipboardList, Database, ExternalLink, Sparkles, CheckCircle2 } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
-type TabType = 'overview' | 'storefront' | 'backend';
+type TabType = 'overview' | 'workspace' | 'backend';
 
-export default function HptMenuShowcase() {
+export default function ErpSystemShowcase() {
     const [activeTab, setActiveTab] = useState<TabType>('overview');
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
     const previewRef = useRef<HTMLDivElement>(null);
 
-    // Fade-in animation on scroll
     useEffect(() => {
         const container = containerRef.current;
         if (container) {
@@ -40,7 +39,6 @@ export default function HptMenuShowcase() {
         }
     }, []);
 
-    // Animate tab switches
     useEffect(() => {
         if (contentRef.current && previewRef.current) {
             gsap.fromTo(
@@ -53,85 +51,94 @@ export default function HptMenuShowcase() {
 
     const tabs = [
         { id: 'overview' as TabType, label: 'Tổng Quan', icon: Sparkles },
-        { id: 'storefront' as TabType, label: 'Giao Diện Gọi Món', icon: ShoppingBag },
-        { id: 'backend' as TabType, label: 'Hệ Thống & AI', icon: Database }
+        { id: 'workspace' as TabType, label: 'Giao Diện Làm Việc', icon: ClipboardList },
+        { id: 'backend' as TabType, label: 'Hệ Thống & Bảo Mật', icon: Database }
     ];
 
     const techBadges: Record<TabType, string[]> = {
         overview: [
             'React + Vite',
             'TypeScript',
-            'NestJS',
+            'Express.js',
             'PostgreSQL',
-            'Prisma',
+            'Prisma ORM',
             'Supabase',
-            'Google AI Studio',
+            'Socket.io',
             'Tailwind CSS',
             'React Query',
             'Zustand'
         ],
-        storefront: ['React + Vite', 'TypeScript', 'Tailwind CSS', 'React Query', 'React Hook Form', 'Zod', 'Zustand'],
-        backend: ['NestJS', 'PostgreSQL', 'TypeScript', 'Prisma Schema', 'Supabase', 'Google Studio API']
+        workspace: [
+            'React + Vite',
+            'TypeScript',
+            'Tailwind CSS',
+            'React Query',
+            'React Hook Form',
+            'Zod',
+            'Recharts',
+            'Zustand'
+        ],
+        backend: [
+            'Express.js',
+            'PostgreSQL',
+            'TypeScript',
+            'Prisma ORM',
+            'Supabase',
+            'JWT & Refresh Token',
+            'Socket.io'
+        ]
     };
 
-    const tabDetails: Record<
-        TabType,
-        {
-            title: string;
-            desc: string;
-            bullets: string[];
-        }
-    > = {
+    const tabDetails: Record<TabType, { title: string; desc: string; bullets: string[] }> = {
         overview: {
-            title: 'Hệ Thống Gọi Món Gọi Món Thông Minh Qua QR Code',
-            desc: 'HPT Menu là giải pháp đặt món tối ưu dành cho các quán ăn và nhà hàng. Bằng việc ứng dụng mã QR định danh theo từng bàn, hệ thống tối ưu hóa quy trình vận hành và mang lại sự tiện ích tối đa cho thực khách.',
+            title: 'Hệ Thống ERP Quản Lý Nhân Sự & Công Việc',
+            desc: 'Hệ thống ERP nội bộ giúp doanh nghiệp quản lý chấm công, phê duyệt đơn từ, phân bổ công việc theo phòng ban và theo dõi hiệu suất nhân viên qua bảng điều khiển trực quan — phân quyền rõ ràng theo 3 cấp Nhân viên, Quản lý và Quản trị viên.',
             bullets: [
-                'Gọi món trực tiếp tại bàn bằng cách quét mã QR độc bản, không cần tải ứng dụng hay qua trung gian.',
-                'Tích hợp trợ lý AI thông minh qua Google Gemini API hỗ trợ tư vấn món ăn và giải đáp thực đơn trực tiếp.',
-                'Đồng bộ dữ liệu thời gian thực giữa thiết bị của khách hàng và hệ thống phục vụ/bếp qua Supabase Realtime.'
+                'Chấm công vào/ra theo thời gian thực, tự động tính giờ làm, phát hiện đi trễ và tổng hợp thống kê theo tháng.',
+                'Quy trình phê duyệt đơn từ (nghỉ phép, làm từ xa, tăng ca) với thông báo tức thời qua Socket.io cho quản lý phụ trách.',
+                'Bảng điều khiển trực quan hóa dữ liệu bằng Recharts, cho phép quản lý lọc xem hiệu suất theo từng nhân viên trong phòng ban.'
             ]
         },
-        storefront: {
-            title: 'Giao Diện Khách Hàng Thân Thiện & Phản Hồi Tức Thì',
-            desc: 'Ứng dụng khách hàng được tối ưu hóa hiển thị trên mọi thiết bị di động, mang lại trải nghiệm đặt món nhanh gọn và trực quan.',
+        workspace: {
+            title: 'Giao Diện Quản Lý Công Việc & Đơn Từ',
+            desc: 'Giao diện được thiết kế theo hướng rõ ràng, tối ưu cho thao tác lặp lại hằng ngày như chấm công, tạo đơn và cập nhật tiến độ công việc, với phân trang và bộ lọc xử lý hoàn toàn phía máy chủ để đảm bảo hiệu năng khi dữ liệu tăng trưởng.',
             bullets: [
-                'Menu hiển thị thông minh theo danh mục, hỗ trợ tìm kiếm nhanh và hiển thị chi tiết nguyên liệu món ăn.',
-                'Giỏ hàng quản lý trạng thái mượt mà bằng Zustand, tự động lưu thông tin bàn và cập nhật hóa đơn.',
-                'Quy trình nhập thông tin và lưu ý đơn hàng chuẩn hóa với React Hook Form và Zod validator.'
+                'Quản lý công việc theo phòng ban với phân quyền chỉnh sửa: nhân viên chỉ cập nhật trạng thái task của mình, quản lý toàn quyền chỉnh sửa.',
+                'Form nhập liệu chuẩn hóa với React Hook Form và Zod, kèm rich text editor cho các trường mô tả và tiểu sử cá nhân.',
+                'Phân trang, tìm kiếm và lọc dữ liệu đồng bộ hai chiều với API, tránh sai lệch số liệu khi kết hợp nhiều điều kiện lọc cùng lúc.'
             ]
         },
         backend: {
-            title: 'Hệ Thống Core Backend Chắc Chắn & Trí Tuệ Nhân Tạo',
-            desc: 'Kiến trúc máy chủ NestJS mạnh mẽ đảm bảo bảo mật, xử lý dữ liệu nhất quán và tích hợp linh hoạt các dịch vụ đám mây.',
+            title: 'Kiến Trúc Backend Bảo Mật & Đáng Tin Cậy',
+            desc: 'Backend xây dựng trên Express.js và TypeScript, ưu tiên tách lớp service riêng biệt để tái sử dụng logic nghiệp vụ, cùng cơ chế xác thực an toàn chống giả mạo phiên đăng nhập.',
             bullets: [
-                'Backend sử dụng NestJS & TypeScript với cấu trúc module chuyên nghiệp, dễ dàng mở rộng và bảo trì.',
-                'Quản lý dữ liệu quan hệ PostgreSQL tối ưu thông qua Prisma ORM, đảm bảo tính toàn vẹn dữ liệu.',
-                'Kết nối Google AI Studio (Gemini API) để xử lý ngôn ngữ tự nhiên và Supabase để đồng bộ hóa trạng thái đơn hàng.'
+                'Xác thực bằng JWT access token ngắn hạn kết hợp refresh token rotation, lưu trong HttpOnly cookie để hạn chế tấn công XSS.',
+                'Quản lý dữ liệu quan hệ PostgreSQL qua Prisma ORM, triển khai trên Supabase với kết nối pooled cho runtime và direct connection riêng cho migration.',
+                'Phân quyền chặt chẽ ở cả hai lớp: middleware kiểm tra vai trò ở tầng route, và kiểm tra quyền sở hữu dữ liệu ngay trong từng controller.'
             ]
         }
     };
 
     return (
-        <section className="sec-featured-product ss-pd-b relative overflow-hidden" id="hptmenu" ref={containerRef}>
+        <section className="sec-featured-product ss-pd-b relative overflow-hidden" id="erp" ref={containerRef}>
             <div className="container">
-                {/* Section Header */}
                 <div className="animate-fade">
                     <Heading title="Dự án nổi bật" classTitle="title-pri" classCustom="mb-16 text-center" />
                 </div>
 
-                {/* Main Card Grid */}
                 <div className="animate-fade hptmenu-card w-full rounded-3xl border-ln bg-white/5 backdrop-blur-md p-12 max-lg:p-8 max-md:p-6 flex flex-col gap-10">
-                    {/* Head Title & Links */}
                     <div className="flex flex-wrap items-center justify-between gap-6 border-b border-white/10 pb-8">
                         <div>
                             <span className="text-xl font-bold uppercase tracking-widest text-emerald-400">
                                 Sản phẩm nổi bật
                             </span>
-                            <h3 className="text-5xl font-black text-white mt-2 max-md:text-4xl">HPT Menu Platform</h3>
+                            <h3 className="text-5xl font-black text-white mt-2 max-md:text-4xl">
+                                ERP Management System
+                            </h3>
                         </div>
                         <div className="flex gap-4">
                             <a
-                                href="https://htp-menu-frontend.vercel.app/"
+                                href="https://erpfrontend-eosin.vercel.app/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn-featured-visit flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-lg transition-all"
@@ -143,11 +150,8 @@ export default function HptMenuShowcase() {
                         </div>
                     </div>
 
-                    {/* Content Columns */}
                     <div className="grid grid-cols-12 gap-8 items-start">
-                        {/* Left Column: Selector & Text details */}
                         <div className="col-span-12 lg:col-span-6 flex flex-col gap-8">
-                            {/* Tabs selector */}
                             <div className="flex flex-wrap gap-3 p-2 rounded-2xl bg-white/5 border border-white/5">
                                 {tabs.map(tab => {
                                     const IconComponent = tab.icon;
@@ -169,7 +173,6 @@ export default function HptMenuShowcase() {
                                 })}
                             </div>
 
-                            {/* Details display */}
                             <div ref={contentRef} className="flex flex-col gap-6">
                                 <h4 className="text-3xl font-bold text-white flex items-center gap-2">
                                     <Sparkles className="text-emerald-400" size={24} />
@@ -180,7 +183,6 @@ export default function HptMenuShowcase() {
                                     {tabDetails[activeTab].desc}
                                 </p>
 
-                                {/* Bullet points */}
                                 <ul className="flex flex-col gap-4">
                                     {tabDetails[activeTab].bullets.map((bullet, idx) => (
                                         <li key={idx} className="flex items-start gap-3 text-xl text-white/70">
@@ -190,7 +192,6 @@ export default function HptMenuShowcase() {
                                     ))}
                                 </ul>
 
-                                {/* Tech stack badges */}
                                 <div className="mt-4">
                                     <p className="text-lg font-bold uppercase tracking-wider text-white/40 mb-3">
                                         Công nghệ cốt lõi
@@ -209,13 +210,11 @@ export default function HptMenuShowcase() {
                             </div>
                         </div>
 
-                        {/* Right Column: Visual Mockup / Code View */}
                         <div className="col-span-12 lg:col-span-6">
                             <div
                                 ref={previewRef}
                                 className="hptmenu-preview-container w-full aspect-[4/3] rounded-2xl border border-white/10 bg-black/40 overflow-hidden relative shadow-2xl shadow-emerald-500/5 flex flex-col"
                             >
-                                {/* Browser Mockup Header */}
                                 <div className="h-10 bg-white/5 border-b border-white/10 flex items-center px-4 justify-between select-none">
                                     <div className="flex gap-2">
                                         <div className="w-3 h-3 rounded-full bg-red-500/70" />
@@ -224,21 +223,20 @@ export default function HptMenuShowcase() {
                                     </div>
                                     <div className="text-sm text-white/40 font-mono select-none px-4 py-0.5 rounded bg-black/25 w-[50%] text-center overflow-hidden text-ellipsis whitespace-nowrap">
                                         {activeTab === 'backend'
-                                            ? 'nestjs/src/modules/products/product.controller.ts'
-                                            : 'htp-menu-frontend.vercel.app/'}
+                                            ? 'erp-backend/src/controllers/task.controller.ts'
+                                            : 'erpfrontend-eosin.vercel.app/'}
                                     </div>
                                     <div className="w-8" />
                                 </div>
 
-                                {/* Tab-Specific Visual Image Preview */}
                                 <div className="flex-grow relative overflow-hidden bg-black/20 flex items-center justify-center">
                                     <Image
                                         src={
                                             activeTab === 'overview'
-                                                ? 'images/hpt-menu-1.png'
-                                                : activeTab === 'storefront'
-                                                  ? 'images/hpt-menu-2.png'
-                                                  : 'images/hpt-menu-3.png'
+                                                ? '/images/erp-1.png'
+                                                : activeTab === 'workspace'
+                                                  ? '/images/erp-2.png'
+                                                  : '/images/erp-3.png'
                                         }
                                         alt={activeTab}
                                         fill

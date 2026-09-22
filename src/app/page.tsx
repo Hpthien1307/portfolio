@@ -10,7 +10,6 @@ import { Autoplay } from 'swiper/modules';
 import { Pagination } from 'swiper/modules';
 import TextType from './components/ui/reactbits/textType/textType';
 import ProfileCard from './components/ui/reactbits/profileCard/profileCard';
-import MotionIf from './customHook/motionIf';
 import ScrollVelocity from './components/ui/reactbits/scrollVecocity/scrollVelocity';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -20,8 +19,8 @@ import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutSection from './partials/about/about-section';
-import LocalShopShowcase from './partials/featured-product/local-shop';
 import HptMenuShowcase from './partials/featured-product/hpt-menu';
+import ErpSystemShowcase from './partials/featured-product/erp-system';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,31 +76,11 @@ export default function Home() {
                             <div className="col-lf w-full lg:w-[50%] p-6">
                                 <div className="col-lf-wrap h-full">
                                     <div className="intro-title flex flex-col justify-center lg:items-start items-center h-full mt-10 gap-y-12 max-2xl:gap-y-8 max-2xl:mt-0">
-                                        <MotionIf
-                                            initial={{ opacity: 0, scale: 0, y: 100 }}
-                                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                                            transition={{
-                                                duration: 1,
-                                                ease: [0.16, 1, 0.3, 1],
-                                                delay: 0.2
-                                            }}
-                                            viewport={{ once: true, amount: 0.3 }}
-                                        >
-                                            <h2 className="title-lg text-7xl font-medium italic max-md:text-4xl">
-                                                Xin chào, mình là Thiện
-                                            </h2>
-                                        </MotionIf>
-                                        <MotionIf
-                                            className="sub-text text-3xl sm:text-5xl font-semibold max-sm:w-full max-sm:text-center"
-                                            initial={{ opacity: 0, scale: 0, y: 100 }}
-                                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                                            transition={{
-                                                duration: 1,
-                                                ease: [0.16, 1, 0.3, 1],
-                                                delay: 0.4
-                                            }}
-                                            viewport={{ once: true, amount: 0.3 }}
-                                        >
+                                        <h2 className="title-lg text-7xl font-medium italic max-md:text-4xl">
+                                            Xin chào, mình là Thiện
+                                        </h2>
+
+                                        <div className="sub-text text-3xl sm:text-5xl font-semibold max-sm:w-full max-sm:text-center">
                                             Hiện tại mình là
                                             <span className="cl-pri max-sm:block max-sm:mt-2">
                                                 <TextType
@@ -111,50 +90,30 @@ export default function Home() {
                                                     initialDelay={500}
                                                 />
                                             </span>
-                                        </MotionIf>
-                                        <MotionIf
-                                            initial={{ opacity: 0, scale: 0, y: 100 }}
-                                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                                            transition={{
-                                                duration: 1,
-                                                ease: [0.16, 1, 0.3, 1],
-                                                delay: 0.6
-                                            }}
-                                            viewport={{ once: true, amount: 0.3 }}
-                                        >
-                                            <Btn href="/#achive" className={`btn-pri border-ln`}>
-                                                <span className="txt">Khám phá</span>
-                                            </Btn>
-                                        </MotionIf>
+                                        </div>
+
+                                        <Btn href="#achive" className={`btn-pri border-ln`}>
+                                            <span className="txt">Khám phá</span>
+                                        </Btn>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-rt w-full lg:w-[50%] p-6">
                                 <div className="col-rt-wrap flex justify-center lg:justify-end">
-                                    <MotionIf
-                                        initial={{ opacity: 0, scale: 0, y: 100 }}
-                                        whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                                        transition={{
-                                            duration: 1,
-                                            ease: [0.16, 1, 0.3, 1]
+                                    <ProfileCard
+                                        name="Phúc Thiện"
+                                        title="Front End developer"
+                                        handle="Thiện"
+                                        status="Online"
+                                        contactText="Liên hệ"
+                                        avatarUrl="images/thien.jpg"
+                                        showUserInfo={true}
+                                        enableTilt={true}
+                                        enableMobileTilt={false}
+                                        onContactClick={() => {
+                                            window.open('https://zalo.me/0773188858', '_blank');
                                         }}
-                                        viewport={{ once: true, amount: 0.3 }}
-                                    >
-                                        <ProfileCard
-                                            name="Phúc Thiện"
-                                            title="Front End developer"
-                                            handle="Thiện"
-                                            status="Online"
-                                            contactText="Liên hệ"
-                                            avatarUrl="images/thien.jpg"
-                                            showUserInfo={true}
-                                            enableTilt={true}
-                                            enableMobileTilt={false}
-                                            onContactClick={() => {
-                                                window.open('https://zalo.me/0773188858', '_blank');
-                                            }}
-                                        />
-                                    </MotionIf>
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -184,8 +143,8 @@ export default function Home() {
             {/* section experience */}
             <ExperienceSection />
 
-            {/* section featured product (Local-shop) */}
-            <LocalShopShowcase />
+            {/* section featured product (ERP System) */}
+            <ErpSystemShowcase />
 
             {/* section featured product (HPT Menu) */}
             <HptMenuShowcase />

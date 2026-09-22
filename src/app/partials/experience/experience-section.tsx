@@ -167,7 +167,9 @@ export default function ExperienceSection() {
 
                                     {experiences[0].projects && experiences[0].projects.length > 0 && (
                                         <div className="exp-projects mb-6">
-                                            <h5 className="text-lg font-semibold text-white/90 mb-3">Dự án nổi bật:</h5>
+                                            <h5 className="text-2xl font-semibold text-white/90 mb-3">
+                                                Dự án nổi bật:
+                                            </h5>
                                             <div className="flex flex-wrap gap-x-4 gap-y-2">
                                                 {experiences[0].projects.map((proj, i) => (
                                                     <MagneticWrapper key={i} range={0.15}>
@@ -175,7 +177,7 @@ export default function ExperienceSection() {
                                                             href={proj.url}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
-                                                            className="project-link text-base cl-blue hover:text-white underline font-medium inline-block"
+                                                            className="project-link text-2xl cl-blue hover:text-white underline font-medium inline-block"
                                                         >
                                                             + {proj.name}
                                                         </a>
@@ -190,7 +192,7 @@ export default function ExperienceSection() {
                                             {experiences[0].tools.map((tool, i) => (
                                                 <span
                                                     key={i}
-                                                    className="tool-tag text-xs font-semibold px-3 py-1 bg-white/5 border border-white/10 rounded-full text-white/70"
+                                                    className="tool-tag text-lg font-semibold px-3 py-1 bg-white/5 border border-white/10 rounded-full text-white/70"
                                                 >
                                                     {tool}
                                                 </span>
@@ -226,7 +228,9 @@ export default function ExperienceSection() {
 
                                     {experiences[1].projects && experiences[1].projects.length > 0 && (
                                         <div className="exp-projects mb-6">
-                                            <h5 className="text-lg font-semibold text-white/90 mb-3">Dự án nổi bật:</h5>
+                                            <h5 className="text-2xl font-semibold text-white/90 mb-3">
+                                                Dự án nổi bật:
+                                            </h5>
                                             <div className="flex flex-wrap gap-x-4 gap-y-2">
                                                 {experiences[1].projects.map((proj, i) => (
                                                     <MagneticWrapper key={i} range={0.15}>
@@ -234,7 +238,7 @@ export default function ExperienceSection() {
                                                             href={proj.url}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
-                                                            className="project-link text-base cl-blue hover:text-white underline font-medium inline-block"
+                                                            className="project-link text-2xl cl-blue hover:text-white underline font-medium inline-block"
                                                         >
                                                             + {proj.name}
                                                         </a>
@@ -249,7 +253,7 @@ export default function ExperienceSection() {
                                             {experiences[1].tools.map((tool, i) => (
                                                 <span
                                                     key={i}
-                                                    className="tool-tag text-xs font-semibold px-3 py-1 bg-white/5 border border-white/10 rounded-full text-white/70"
+                                                    className="tool-tag text-lg font-semibold px-3 py-1 bg-white/5 border border-white/10 rounded-full text-white/70"
                                                 >
                                                     {tool}
                                                 </span>

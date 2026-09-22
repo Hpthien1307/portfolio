@@ -7,10 +7,7 @@ export const skills = [
         icon: 'express.png',
         text: 'Express'
     },
-    {
-        icon: 'nestjs.png',
-        text: 'Nestjs'
-    },
+
     {
         icon: 'postgreSQL.png',
         text: 'PostgreSQL'

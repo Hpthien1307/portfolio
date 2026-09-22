@@ -5,7 +5,7 @@ export const Menu = [
         className: 'page-about'
     },
     {
-        href: '#achive',
+        href: '#achives',
         label: 'Thành tựu',
         className: 'page-achive'
     },
@@ -20,9 +20,9 @@ export const Menu = [
         className: 'page-experience'
     },
     {
-        href: '#localshop',
-        label: 'Local Shop',
-        className: 'page-localshop'
+        href: '#erp',
+        label: 'ERP',
+        className: 'page-erp'
     },
     {
         href: '#hptmenu',
