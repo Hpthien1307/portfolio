@@ -233,10 +233,10 @@ export default function ErpSystemShowcase() {
                                     <Image
                                         src={
                                             activeTab === 'overview'
-                                                ? '/images/erp-1.png'
+                                                ? 'images/erp-1.png'
                                                 : activeTab === 'workspace'
-                                                  ? '/images/erp-2.png'
-                                                  : '/images/erp-3.png'
+                                                  ? 'images/erp-2.png'
+                                                  : 'images/erp-3.png'
                                         }
                                         alt={activeTab}
                                         fill
